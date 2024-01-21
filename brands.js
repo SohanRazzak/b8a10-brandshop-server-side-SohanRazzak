@@ -1,4 +1,4 @@
-[
+const all_brands = [
     {
         "id": 1,
         "name": "Lenovo",
@@ -30,3 +30,5 @@
         "photo": "https://baseus.io/cdn/shop/files/2023_LOGO-Baseus2_410x.png?v=1686060774"
     }
 ]
+
+export default all_brands;
