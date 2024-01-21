@@ -186,7 +186,7 @@ async function run() {
         app.get('/products/category/:category', async (req, res) => {
             const category = req.params.category;
             const filter = { category: category }
-            const cursor = productCollection.find();
+            const cursor = productCollection.find(filter);
             const result = await cursor.toArray();
             res.send(result);
         })
@@ -215,8 +215,6 @@ app.get('/', (req, res) => {
     Technocare
     <br/>
     at your service
-    <br/>
-    ${process.env.DB_USER}:${process.env.DB_PASS}
     </p>
     `)
 })
