@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb';
+import { MongoClient, ServerApiVersion } from 'mongodb';
+import allbrands from './brands.json'
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -217,6 +218,10 @@ app.get('/', (req, res) => {
     at your service
     </p>
     `)
+})
+
+app.get('/all_brands', (req, res)=> {
+    res.send(allbrands); 
 })
 
 app.listen(port, () => console.log(`Server Port ${port}`))
