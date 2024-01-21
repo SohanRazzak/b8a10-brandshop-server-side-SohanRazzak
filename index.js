@@ -131,7 +131,7 @@ async function run() {
 
         // Product by sku
         app.get('/products/:sku', async (req, res) => {
-            const sku = req.params.sku;
+            const sku = parseInt(req.params.sku);
             const filter = { sku: sku };
             const result = await productCollection.findOne(filter);
             res.send(result)
