@@ -118,7 +118,7 @@ async function run() {
                 }
             }
             const result = await userCollection.updateOne(filter, updatedCart, options);
-            res.sendStatus(result)
+            res.send(result)
         })
 
         // Products Endpoints
