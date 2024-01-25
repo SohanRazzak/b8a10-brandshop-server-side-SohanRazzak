@@ -114,11 +114,11 @@ async function run() {
             const options = { upsert : true };
             const updatedCart = {
                 $set : {
-                    cart : userCart.cart
+                    cart : userCart.updatedCart
                 }
             }
             const result = await userCollection.updateOne(filter, updatedCart, options);
-            res.send(result)
+            res.sendStatus(result)
         })
 
         // Products Endpoints
